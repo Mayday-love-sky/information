@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+ 	<meta charset="UTF-8">
+ 	<title>information-inquiry-system</title>
+ 	<link rel="stylesheet" href="/static/css/iis.css">
+  	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+
+
+ </head>
+ <body>
+ 	<div class="main">
+ 		<h1>信息查询系统</h1>
+		<div class="inquiry">
+            <form action="/index/" method="post">
+ 			   <input type="text" id="input" placeholder="请输入您想查询的信息..." name="inquiry">
+			   <input type="submit" id="submit" value="提交" >
+            </form>
+		</div>
+ 	</div>
+
+    <table>
+        <thead>
+           <th>查询内容</th>
+        </thead>
+        {% for line in data %}
+            <tr>
+	           <td>{{line.inquiry}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+  <script src="/static/js/jquery-3.3.1.js"></script>
+ </body>
+</html>
